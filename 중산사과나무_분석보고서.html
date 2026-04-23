@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>중산사과나무치과병원 — 마케팅 현황 분석 보고서</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #1a3d2e;
+    --green-mid: #2d6a4f;
+    --green-light: #52b788;
+    --green-pale: #d8f3dc;
+    --green-ghost: #f0faf2;
+    --amber: #e9a800;
+    --amber-pale: #fff8e1;
+    --red: #c0392b;
+    --red-pale: #fdecea;
+    --ink: #1a1a1a;
+    --ink-mid: #4a4a4a;
+    --ink-light: #888;
+    --border: #e2e8e4;
+    --bg: #f7f9f7;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Pretendard', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    background: var(--green-deep);
+    color: white;
+    padding: 80px 60px 60px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .cover-tag {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--green-light);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .cover-title {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .cover-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 48px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .cover-meta-item label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 4px;
+  }
+  .cover-meta-item span {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* ─── LAYOUT ─── */
+  .page { max-width: 900px; margin: 0 auto; padding: 0 40px 60px; }
+
+  /* ─── SECTION HEADER ─── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin: 52px 0 24px;
+  }
+  .section-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--green-light);
+    text-transform: uppercase;
+  }
+  .section-title {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-deep);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── CARDS ─── */
+  .card-grid {
+    display: grid;
+    gap: 12px;
+  }
+  .card-grid-2 { grid-template-columns: 1fr 1fr; }
+  .card-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .card-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+  }
+  .card-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 6px;
+  }
+  .card-value {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ─── METRIC CARDS ─── */
+  .metric-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+  }
+  .metric-card .num {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .metric-card .unit {
+    font-size: 13px;
+    color: var(--ink-light);
+  }
+  .metric-card .sub {
+    font-size: 12px;
+    color: var(--ink-light);
+    margin-top: 4px;
+  }
+
+  /* ─── CALLOUTS ─── */
+  .callout {
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .callout-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .callout-text { font-size: 14px; line-height: 1.7; }
+  .callout-sub { font-size: 12px; margin-top: 3px; opacity: 0.7; }
+
+  .callout-green { background: var(--green-ghost); }
+  .callout-green .callout-dot { background: var(--green-light); }
+  .callout-green .callout-text { color: var(--green-deep); }
+
+  .callout-amber { background: var(--amber-pale); }
+  .callout-amber .callout-dot { background: var(--amber); }
+  .callout-amber .callout-text { color: #5a3e00; }
+
+  .callout-red { background: var(--red-pale); }
+  .callout-red .callout-dot { background: var(--red); }
+  .callout-red .callout-text { color: #5c1a14; }
+
+  /* ─── TAGS ─── */
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .tag {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 99px;
+    border: 1px solid;
+  }
+  .tag-green { background: var(--green-pale); color: var(--green-deep); border-color: var(--green-light); }
+  .tag-amber { background: var(--amber-pale); color: #5a3e00; border-color: var(--amber); }
+  .tag-gray { background: #f3f3f3; color: #555; border-color: #ddd; }
+
+  /* ─── REVIEW COMPARISON TABLE ─── */
+  .review-table { width: 100%; border-collapse: collapse; }
+  .review-table th {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    font-weight: 500;
+    padding: 10px 16px;
+    background: #f7f9f7;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  .review-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  .review-table tr:last-child td { border-bottom: none; }
+  .review-table tr.ours { background: #f0faf2; }
+  .review-table tr.ours td { font-weight: 500; color: var(--green-deep); }
+
+  .rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    margin-right: 6px;
+  }
+  .rank-1 { background: #fff3cd; color: #856404; }
+  .rank-2 { background: #e8f4fd; color: #1565c0; }
+  .rank-3 { background: #f3e5f5; color: #6a1b9a; }
+  .rank-us { background: var(--green-pale); color: var(--green-deep); }
+
+  .gap-pos { color: var(--green-mid); font-weight: 600; }
+  .gap-neg { color: var(--red); font-weight: 600; }
+
+  /* ─── BAR ─── */
+  .bar-wrap { display: flex; align-items: center; gap: 8px; }
+  .bar-track {
+    flex: 1;
+    height: 6px;
+    background: #eee;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .bar-fill { height: 100%; border-radius: 99px; }
+
+  /* ─── SCORE BARS ─── */
+  .score-section { display: flex; flex-direction: column; gap: 12px; }
+  .score-row { display: flex; align-items: center; gap: 12px; }
+  .score-label { font-size: 13px; width: 130px; flex-shrink: 0; color: var(--ink-mid); }
+  .score-track { flex: 1; height: 8px; background: #eee; border-radius: 99px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 99px; transition: width 0.4s ease; }
+  .score-num { font-size: 13px; font-weight: 600; color: var(--ink); width: 36px; text-align: right; }
+
+  /* ─── BRAND CARDS ─── */
+  .brand-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+  }
+  .brand-item-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 8px;
+  }
+  .brand-quote {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px;
+    color: var(--green-deep);
+    line-height: 1.7;
+    border-left: 3px solid var(--green-light);
+    padding-left: 14px;
+  }
+
+  /* ─── INSIGHT BOX ─── */
+  .insight-box {
+    background: var(--green-deep);
+    color: white;
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-top: 12px;
+  }
+  .insight-box .title {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 12px;
+  }
+  .insight-box p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.88);
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+  }
+
+  /* ─── PRIORITY TABLE ─── */
+  .priority-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 18px 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  .priority-num {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--green-pale);
+    line-height: 1;
+    min-width: 32px;
+  }
+  .priority-content {}
+  .priority-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 4px;
+  }
+  .priority-desc {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .cover { padding: 48px 24px 40px; }
+    .page { padding: 0 20px 40px; }
+    .card-grid-2, .card-grid-3, .card-grid-4 { grid-template-columns: 1fr; }
+    .cover-meta { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <div style="position:relative;z-index:1;">
+    <p class="cover-tag">THINKLAB · Marketing Analysis Report</p>
+    <h1 class="cover-title">중산사과나무치과병원<br>마케팅 현황 분석</h1>
+    <p class="cover-sub">네이버 플레이스 · 경쟁사 비교 · 입지 분석 · 브랜딩 방향</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <label>원장</label>
+        <span>김보라 원장</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>병원명</label>
+        <span>중산사과나무치과병원</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>위치</label>
+        <span>경기도 고양시 일산동구 중산동</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>작성일</label>
+        <span>2026년 4월</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ═══ SECTION 1: 병원 기본 현황 ═══ -->
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">병원 기본 현황</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="card-grid card-grid-4" style="margin-bottom:12px;">
+    <div class="metric-card">
+      <div class="num">18년</div>
+      <div class="unit">한자리 운영</div>
+      <div class="sub">2023년 12월 기준</div>
+    </div>
+    <div class="metric-card">
+      <div class="num">12명</div>
+      <div class="unit">직원 수</div>
+      <div class="sub">급여 총액 5,700만원</div>
+    </div>
+    <div class="metric-card">
+      <div class="num">3인</div>
+      <div class="unit">전원 전문의</div>
+      <div class="sub">진료팀 전원 치과위생사</div>
+    </div>
+    <div class="metric-card">
+      <div class="num">200만</div>
+      <div class="unit">월 마케팅 비용</div>
+      <div class="sub">기존 대행사 기준</div>
+    </div>
+  </div>
+
+  <div class="card-grid card-grid-3" style="margin-bottom:12px;">
+    <div class="card">
+      <p class="card-label">주력 진료</p>
+      <p class="card-value">치주 · 외과 · 임플란트</p>
+      <div class="tags">
+        <span class="tag tag-green">치주</span>
+        <span class="tag tag-green">외과</span>
+        <span class="tag tag-green">임플란트</span>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card-label">인센티브 구조</p>
+      <p class="card-value">목표매출 1.55억 초과 시</p>
+      <p style="font-size:12px;color:var(--ink-light);margin-top:4px;">실장 30 / 팀장 20 / 사원 10</p>
+    </div>
+    <div class="card">
+      <p class="card-label">도입 희망 서비스</p>
+      <div class="tags" style="margin-top:0;">
+        <span class="tag tag-gray">PDRN 치아살리기</span>
+        <span class="tag tag-gray">스트라우만 프리미엄</span>
+        <span class="tag tag-gray">메가젠 저가형</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-amber">
+    <div class="callout-dot"></div>
+    <div>
+      <div class="callout-text">조직 고민: 호봉제 + 고년차 다수로 인건비 비중 과다 · 신규 직원 교육 부담 집중 · 새 시스템 도입 시 초반 저항 존재</div>
+    </div>
+  </div>
+
+
+  <!-- ═══ SECTION 2: 설문 응답 요약 ═══ -->
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">설문 응답 요약</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- 개원 & 운영 -->
+  <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px;">개원 · 운영</p>
+  <div class="card-grid card-grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <p class="card-label">개원 예정일 / 위치</p>
+      <p class="card-value">2023년 12월 28일 · 경기도 일산동구 중산동</p>
+    </div>
+    <div class="card">
+      <p class="card-label">입지 선택 이유</p>
+      <p class="card-value">사거리 치과. 주변으로 경쟁 치과가 들어올 만한 상가 자리가 없음.</p>
+    </div>
+    <div class="card">
+      <p class="card-label">이전 / 확장 계획</p>
+      <p class="card-value">미정</p>
+    </div>
+    <div class="card">
+      <p class="card-label">주력 진료 및 이유</p>
+      <p class="card-value">치주 · 외과 · 임플란트 — 전공이고 자신 있는 분야</p>
+    </div>
+  </div>
+
+  <!-- 조직 · 인사 -->
+  <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px;">조직 · 인사</p>
+  <div class="card-grid card-grid-2" style="margin-bottom:12px;">
+    <div class="card">
+      <p class="card-label">구축하고 싶은 병원 내부 시스템</p>
+      <p class="card-value">구성원 모두가 역할을 잘 수행하는 수준을 넘어, 현재를 진단하고 개선 방향을 모색하며 자체적으로 성장 동력을 갖는 병원</p>
+    </div>
+    <div class="card">
+      <p class="card-label">커뮤니케이션 방식</p>
+      <p class="card-value">월례회의 월 1회 · 경영회의 월 1회 정기 진행 + 필요 시 비정기 회의</p>
+    </div>
+    <div class="card">
+      <p class="card-label">인사 평가 / 연봉 협상</p>
+      <p class="card-value">인사 평가: 계획 중 · 연봉 협상: 호봉제 기준</p>
+    </div>
+    <div class="card">
+      <p class="card-label">인센티브 제도</p>
+      <p class="card-value">목표매출 1억 5,500만원 초과 시 구간별 지급<br>실장 30 / 팀장 20 / 사원 10</p>
+    </div>
+  </div>
+  <div class="callout callout-amber" style="margin-bottom:20px;">
+    <div class="callout-dot"></div>
+    <div class="callout-text">직원 관리 고민: 호봉제 + 고년차 다수로 인건비 비중 과다. 연차별 교육 시스템 존재하나 직원 교체 시 교육 담당자 부담 가중. 기존 시스템이 확고해 새로운 것 도입 시 초반 시간 소요 큼.</div>
+  </div>
+
+  <!-- 환자 경험 -->
+  <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px;">환자 경험</p>
+  <div class="card-grid card-grid-3" style="margin-bottom:12px;">
+    <div class="card">
+      <p class="card-label">만족도 향상 노력</p>
+      <p class="card-value">정성을 다한 진료 · 사소한 진료에도 환자가 납득할 수 있는 설명 · 치료 과정마다 충분한 설명 제공</p>
+    </div>
+    <div class="card">
+      <p class="card-label">환자 불편 요소</p>
+      <p class="card-value">마취 불편감 · 수술 후 치유 과정 불편감 · 대기시간</p>
+    </div>
+    <div class="card">
+      <p class="card-label">환자 만족 요소</p>
+      <p class="card-value">꼼꼼한 설명 · 진료 퀄리티</p>
+    </div>
+  </div>
+  <div class="card-grid card-grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <p class="card-label">컴플레인 기록</p>
+      <p class="card-value">컴플레인 환자 및 내역 기록 유지 · 별도 매뉴얼은 없음</p>
+    </div>
+    <div class="card">
+      <p class="card-label">컴플레인 피드백 방식</p>
+      <p class="card-value">팀별 자체 환자 케어 후 월례회의에서 개선점 공지</p>
+    </div>
+  </div>
+
+  <!-- 병원 비전 -->
+  <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px;">병원 비전 · 목표</p>
+  <div class="card-grid card-grid-2" style="margin-bottom:12px;">
+    <div class="card">
+      <p class="card-label">만들고 싶은 병원</p>
+      <p class="card-value">지속 가능한 병원 · 지역사회에서 신뢰받는 병원 · 환자와 구성원 모두가 만족하는 병원</p>
+    </div>
+    <div class="card">
+      <p class="card-label">목표 달성을 위한 노력</p>
+      <p class="card-value">진료팀 · 원장 차트 리뷰를 통한 진료 퀄리티 향상 · 진료 시스템 매뉴얼화 · 팀내회의·메인회의·경영회의·월례회의를 통한 지속 보완</p>
+    </div>
+    <div class="card">
+      <p class="card-label">추가 도입 희망 진료</p>
+      <div class="tags" style="margin-top:4px;">
+        <span class="tag tag-gray">PDRN 치아살리기</span>
+        <span class="tag tag-gray">스트라우만 프리미엄</span>
+        <span class="tag tag-gray">메가젠 저가형</span>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card-label">참고 홈페이지</p>
+      <p class="card-value">appletreejs.com · 현 홈페이지 디자인에 만족, 다정하고 따뜻한 이미지 유지 희망</p>
+    </div>
+  </div>
+
+  <!-- 마케팅 설문 -->
+  <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px;">마케팅 설문</p>
+  <div class="card-grid card-grid-3" style="margin-bottom:12px;">
+    <div class="card">
+      <p class="card-label">대행사 이용 이력 / 지출</p>
+      <p class="card-value">이용 이력 있음 · 월 200만원 지출</p>
+    </div>
+    <div class="card">
+      <p class="card-label">마케팅 만족도</p>
+      <p class="card-value" style="color:var(--red);">불만족 — "직접적으로 치과 개선에 도움이 된다고 느끼지 못함"</p>
+    </div>
+    <div class="card">
+      <p class="card-label">대행사 선정 기준</p>
+      <p class="card-value">치과 현황 파악 · 문제 인식 · 개선 방안 마련에 적극적으로 도움을 줄 수 있는 곳</p>
+    </div>
+    <div class="card">
+      <p class="card-label">마케팅 이해도 (자체 평가)</p>
+      <p class="card-value" style="font-size:20px;font-weight:700;color:var(--green-deep);">3 <span style="font-size:13px;color:var(--ink-light);font-weight:400;">/ 5</span></p>
+    </div>
+    <div class="card">
+      <p class="card-label">마케팅 고민</p>
+      <p class="card-value">네이버 광고 이해도 부족 · 마케팅 방법론 전반 이론적 숙지 미비</p>
+    </div>
+    <div class="card">
+      <p class="card-label">관심 온라인 채널</p>
+      <div class="tags" style="margin-top:4px;">
+        <span class="tag tag-green">네이버 플레이스</span>
+        <span class="tag tag-green">네이버 카페</span>
+      </div>
+    </div>
+  </div>
+  <div class="card-grid card-grid-2" style="margin-bottom:20px;">
+    <div class="card">
+      <p class="card-label">관심 오프라인 채널</p>
+      <div class="tags" style="margin-top:4px;">
+        <span class="tag tag-gray">병원 내부 브랜딩</span>
+        <span class="tag tag-gray">간판 / 배너</span>
+        <span class="tag tag-gray">업체 MOU 제휴</span>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card-label">THINKLAB 기대사항</p>
+      <p class="card-value">"적극적으로 치과의 현황 파악과 문제 인식·개선 방안 마련에 도움을 줄 수 있으면 좋겠다"</p>
+    </div>
+  </div>
+
+  <!-- 브랜딩 설문 -->
+  <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px;">브랜딩 설문</p>
+  <div class="card-grid card-grid-2" style="margin-bottom:12px;">
+    <div class="card">
+      <p class="card-label">병원 핵심 역량 및 차별점</p>
+      <p class="card-value">18년 한자리 유지를 가능하게 한 시스템과 의료진 역량 · 두터운 환자군 신뢰 · 사과나무 네트워크 이미지 · 병원급 치과 · 3인 전원 전문의 · 진료팀 전원 치과위생사</p>
+    </div>
+    <div class="card">
+      <p class="card-label">병원이 추구하는 가치·원칙</p>
+      <p class="card-value">오랫동안 지역사회에 헌신 · 믿고 맡길 수 있는 양질의 진료 · 환자에게 공감하고 사소한 불편감도 해결</p>
+    </div>
+    <div class="card">
+      <p class="card-label">지향 이미지</p>
+      <div class="tags" style="margin-top:4px;">
+        <span class="tag tag-green">원칙대로</span>
+        <span class="tag tag-green">믿고 맡길 수 있는</span>
+        <span class="tag tag-green">올바른</span>
+        <span class="tag tag-green">친절한</span>
+        <span class="tag tag-green">전문적</span>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card-label">지양 이미지</p>
+      <div class="tags" style="margin-top:4px;">
+        <span class="tag tag-gray">과잉진료</span>
+        <span class="tag tag-gray">덤핑</span>
+        <span class="tag tag-gray">성의없음</span>
+        <span class="tag tag-gray">불친절</span>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card-label">브랜드 페르소나</p>
+      <p class="card-value">성실하고 바른 길을 걷는 진실된 사람. 사람을 좋아하는, 친근하고 소탈한 사람.</p>
+    </div>
+    <div class="card">
+      <p class="card-label">치과 이름의 의미</p>
+      <p class="card-value">스피노자의 명언에서 유래 — "내일 지구의 종말이 오더라도, 나는 오늘 한 그루의 사과나무를 심겠다."</p>
+    </div>
+  </div>
+  <div class="brand-item" style="margin-bottom:20px;">
+    <p class="brand-item-label">병원을 한 문장으로 소개한다면</p>
+    <p class="brand-quote">"환자의 사소한 불편감도 놓치지 않고 치아와 구강뿐 아니라 마음까지 편하게 만드는 치과 / 어려운 진료도 편하게, 양질의 전문적인 진료 제공 / 내 가족도, 내 평생의 구강건강도 믿고 맡길 수 있는 치과"</p>
+  </div>
+
+
+  <!-- ═══ SECTION 3 (구 2): 네이버 플레이스 현황 ═══ -->
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">네이버 플레이스 현황</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="card-grid card-grid-3" style="margin-bottom:20px;">
+    <div class="metric-card">
+      <div class="num">996</div>
+      <div class="unit">방문자 리뷰</div>
+      <div class="sub">1,000건 달성 직전</div>
+    </div>
+    <div class="metric-card">
+      <div class="num">227</div>
+      <div class="unit">블로그 리뷰</div>
+      <div class="sub">작업 블로그 포함 추정</div>
+    </div>
+    <div class="metric-card">
+      <div class="num">4.4:1</div>
+      <div class="unit">방문자:블로그 비율</div>
+      <div class="sub">실환자 리뷰 비중 높음</div>
+    </div>
+  </div>
+
+  <div class="callout callout-green">
+    <div class="callout-dot"></div>
+    <div class="callout-text">방문자 리뷰 996건 — 18년 운영이 쌓아온 실환자 신뢰 자산. 1,000건 돌파가 코앞으로, 이를 마케팅 콘텐츠로 활용할 절호의 타이밍.</div>
+  </div>
+  <div class="callout callout-green">
+    <div class="callout-dot"></div>
+    <div class="callout-text">배너 이미지 다양하게 운영 중 — 전문의 3인 노출, 진료 카테고리별 배너 구성 확인됨.</div>
+  </div>
+  <div class="callout callout-amber">
+    <div class="callout-dot"></div>
+    <div class="callout-text">배너 메시지 통일성 부족 — "불편함은 덜고", "온가족 치과주치의" 등 카피 방향 분산. 브랜드 톤이 아직 잡히지 않은 상태.</div>
+  </div>
+  <div class="callout callout-amber">
+    <div class="callout-dot"></div>
+    <div class="callout-text">이미지 퀄리티 편차 — 전문의 단체 사진 배너 vs 일러스트 배너 혼재. 병원 이미지의 통일감 부족.</div>
+  </div>
+
+
+  <!-- ═══ SECTION 4: 경쟁사 리뷰 비교 ═══ -->
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">경쟁사 방문자 리뷰 비교</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <p style="font-size:13px;color:var(--ink-light);margin-bottom:16px;">※ 블로그 리뷰는 업체 의뢰 작업 블로그가 대부분으로 신뢰 지표에서 제외. 방문자 리뷰만으로 비교.</p>
+
+  <table class="review-table" style="margin-bottom:20px;">
+    <thead>
+      <tr>
+        <th>병원</th>
+        <th>마케팅 집중도</th>
+        <th>방문자 리뷰</th>
+        <th>중산사과나무 대비</th>
+        <th>방문자 리뷰 비중</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="rank-badge rank-1">1</span>연세일등치과</td>
+        <td><span class="tag tag-amber" style="font-size:11px;">매우 높음</span></td>
+        <td style="font-weight:600;">1,637</td>
+        <td><span class="gap-neg">▼ 641 뒤처짐</span></td>
+        <td>
+          <div class="bar-wrap">
+            <div class="bar-track"><div class="bar-fill" style="width:100%;background:#1a3d2e;"></div></div>
+            <span style="font-size:12px;color:var(--ink-light);">1,637</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge" style="background:#fff3e0;color:#e65100;">2</span>굿센치과 일산</td>
+        <td><span class="tag tag-amber" style="font-size:11px;">블로그 병행</span></td>
+        <td style="font-weight:600;">1,046</td>
+        <td><span class="gap-neg">▼ 50 뒤처짐</span></td>
+        <td>
+          <div class="bar-wrap">
+            <div class="bar-track"><div class="bar-fill" style="width:64%;background:#e65100;opacity:0.7;"></div></div>
+            <span style="font-size:12px;color:var(--ink-light);">1,046</span>
+          </div>
+        </td>
+      </tr>
+      <tr class="ours">
+        <td><span class="rank-badge rank-us">★</span>중산사과나무</td>
+        <td><span class="tag tag-green" style="font-size:11px;">성장 중</span></td>
+        <td style="font-weight:600;">996</td>
+        <td style="color:var(--green-mid);font-weight:600;">기준</td>
+        <td>
+          <div class="bar-wrap">
+            <div class="bar-track"><div class="bar-fill" style="width:61%;background:#52b788;"></div></div>
+            <span style="font-size:12px;color:var(--ink-light);">996</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-2">3</span>함박웃음치과</td>
+        <td><span class="tag tag-amber" style="font-size:11px;">블로그 집중</span></td>
+        <td>749</td>
+        <td><span class="gap-pos">▲ 247 앞섬</span></td>
+        <td>
+          <div class="bar-wrap">
+            <div class="bar-track"><div class="bar-fill" style="width:46%;background:#aaa;"></div></div>
+            <span style="font-size:12px;color:var(--ink-light);">749</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-3">4</span>다인치과</td>
+        <td><span class="tag tag-gray" style="font-size:11px;">보통</span></td>
+        <td>488</td>
+        <td><span class="gap-pos">▲ 508 앞섬</span></td>
+        <td>
+          <div class="bar-wrap">
+            <div class="bar-track"><div class="bar-fill" style="width:30%;background:#aaa;"></div></div>
+            <span style="font-size:12px;color:var(--ink-light);">488</span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insight-box">
+    <p class="title">핵심 인사이트</p>
+    <p>방문자 리뷰 기준 현재 순위는 연세일등(1,637) → 굿센(1,046) → 중산사과나무(996) → 함박웃음(749) → 다인(488). 굿센치과가 중산사과나무보다 50건 앞선 상황으로, 4분기 이내 지역 1위 달성을 위한 1차 추월 목표가 된다. 함박웃음은 블로그 리뷰 6,859건을 보유하면서도 실환자 리뷰는 749건에 불과 — 블로그 마케팅 의존도가 높지만 실제 환자 만족도 지표에서는 중산사과나무가 우위. 최종 목표는 연세일등(1,637) 추월.</p>
+  </div>
+
+
+  <!-- ═══ SECTION 5: 입지 분석 ═══ -->
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">입지 · 상권 분석</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="card-grid card-grid-3" style="margin-bottom:20px;">
+    <div class="card" style="text-align:center;">
+      <p class="card-label">입지 유형</p>
+      <p style="font-size:18px;font-weight:700;color:var(--green-deep);margin-top:4px;">사거리형</p>
+      <p style="font-size:12px;color:var(--ink-light);">중산1동 교차로 코너</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <p class="card-label">상권 성격</p>
+      <p style="font-size:18px;font-weight:700;color:var(--green-deep);margin-top:4px;">주거 밀착형</p>
+      <p style="font-size:12px;color:var(--ink-light);">대규모 아파트 단지 중심</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <p class="card-label">역세권 여부</p>
+      <p style="font-size:18px;font-weight:700;color:var(--red);margin-top:4px;">비역세권</p>
+      <p style="font-size:12px;color:var(--ink-light);">일산역·탄현역 도보권 아님</p>
+    </div>
+  </div>
+
+  <div style="margin-bottom:10px;">
+    <div class="callout callout-green">
+      <div class="callout-dot"></div>
+      <div>
+        <div class="callout-text">반경 500m 내 대규모 아파트 단지 밀집 — 경남동신·일산건영·탄현4단지 등. 장기 거주 중장년층 비중 높아 재방문·가족 전환율 유리한 구조.</div>
+      </div>
+    </div>
+    <div class="callout callout-green">
+      <div class="callout-dot"></div>
+      <div>
+        <div class="callout-text">사거리 코너 위치 — 차량·보행 동선 교차점. 간판·배너 시인성 유리. "주변에 경쟁 치과가 들어올 상가 자리가 없다"는 원장님 판단과 정확히 일치하는 방어적 입지.</div>
+      </div>
+    </div>
+    <div class="callout callout-green">
+      <div class="callout-dot"></div>
+      <div>
+        <div class="callout-text">중산고·일산동고 등 학교 밀집 — 소아·청소년 교정 수요 존재. 가족 단위 환자 유입 구조 유리.</div>
+      </div>
+    </div>
+    <div class="callout callout-amber">
+      <div class="callout-dot"></div>
+      <div>
+        <div class="callout-text">비역세권 구조 — 유동 인구 기반 신규 환자 유입 제한적. '지나가다 발견'보다 '검색해서 찾아오는' 패턴이 지배적. 네이버 플레이스가 사실상 간판 역할.</div>
+      </div>
+    </div>
+    <div class="callout callout-red">
+      <div class="callout-dot"></div>
+      <div>
+        <div class="callout-text">서쪽 주엽역·대화역 핵심 상업권과 경쟁 — 현대백화점·킨텍스 인근 치과들의 마케팅이 검색 반경 내 겹칠 수 있음.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;">
+    <p style="font-size:12px;color:var(--ink-light);margin-bottom:14px;letter-spacing:0.05em;text-transform:uppercase;">입지 요소별 평가</p>
+    <div class="score-section">
+      <div class="score-row">
+        <span class="score-label">배후 수요 안정성</span>
+        <div class="score-track"><div class="score-fill" style="width:90%;background:var(--green-light);"></div></div>
+        <span class="score-num">9.0</span>
+      </div>
+      <div class="score-row">
+        <span class="score-label">경쟁 차단성</span>
+        <div class="score-track"><div class="score-fill" style="width:85%;background:var(--green-light);"></div></div>
+        <span class="score-num">8.5</span>
+      </div>
+      <div class="score-row">
+        <span class="score-label">시인성 / 노출</span>
+        <div class="score-track"><div class="score-fill" style="width:75%;background:#5DCAA5;"></div></div>
+        <span class="score-num">7.5</span>
+      </div>
+      <div class="score-row">
+        <span class="score-label">유동인구 신규 유입</span>
+        <div class="score-track"><div class="score-fill" style="width:40%;background:var(--amber);"></div></div>
+        <span class="score-num">4.0</span>
+      </div>
+      <div class="score-row">
+        <span class="score-label">온라인 검색 의존도</span>
+        <div class="score-track"><div class="score-fill" style="width:95%;background:var(--red);"></div></div>
+        <span class="score-num" style="color:var(--red);">매우 높음</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-box" style="margin-top:20px;">
+    <p class="title">입지 결론</p>
+    <p>"지키는 상권" — 신규 유입보다 기존 배후 주민의 재방문·소개·가족 전환이 핵심 성장 동력. 오프라인 노출보다 네이버 플레이스·검색 최적화가 사실상 유일한 신환 유입 채널. 방문자 리뷰 확대와 플레이스 이미지 정비가 최우선 과제.</p>
+  </div>
+
+
+  <!-- ═══ SECTION 6: 브랜딩 방향 ═══ -->
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2 class="section-title">브랜딩 방향 정리</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="card-grid card-grid-2" style="margin-bottom:12px;">
+    <div class="brand-item">
+      <p class="brand-item-label">미션</p>
+      <p class="brand-quote">믿을 수 있는 진료로, 치아와 마음이 함께 편안해지는 치과를 만든다</p>
+    </div>
+    <div class="brand-item">
+      <p class="brand-item-label">비전</p>
+      <p class="brand-quote">환자의 치아와 마음까지 책임지는 평생 치과</p>
+    </div>
+  </div>
+
+  <div class="card-grid card-grid-2" style="margin-bottom:12px;">
+    <div class="card">
+      <p class="card-label">핵심가치</p>
+      <div class="tags">
+        <span class="tag tag-green">신뢰</span>
+        <span class="tag tag-green">정직</span>
+        <span class="tag tag-green">정확</span>
+        <span class="tag tag-green">공감</span>
+        <span class="tag tag-green">책임</span>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card-label">브랜드 페르소나</p>
+      <p class="card-value">성실하고 바른 길을 걷는 진실된 사람.<br>사람을 좋아하는, 친근하고 소탈한 사람.</p>
+    </div>
+  </div>
+
+  <div class="card-grid card-grid-2" style="margin-bottom:12px;">
+    <div class="card">
+      <p class="card-label">지향 이미지</p>
+      <div class="tags">
+        <span class="tag tag-green">원칙적</span>
+        <span class="tag tag-green">믿음직</span>
+        <span class="tag tag-green">올바름</span>
+        <span class="tag tag-green">친절</span>
+        <span class="tag tag-green">전문적</span>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card-label">지양 이미지</p>
+      <div class="tags">
+        <span class="tag tag-gray">과잉진료</span>
+        <span class="tag tag-gray">덤핑</span>
+        <span class="tag tag-gray">불친절</span>
+        <span class="tag tag-gray">성의없음</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="brand-item">
+    <p class="brand-item-label">한 문장 소개</p>
+    <p class="brand-quote" style="font-size:16px;">"환자의 사소한 불편감도 놓치지 않고 치아와 구강뿐 아니라 마음까지 편하게 만드는 치과"</p>
+  </div>
+
+  <div style="margin-top:12px;" class="callout callout-green">
+    <div class="callout-dot"></div>
+    <div>
+      <div class="callout-text">18년 한자리 · 3인 전원 전문의 · 사과나무 네트워크 — 브랜드 방향이 이미 잡혀 있음. 새로운 방향 설정보다 기존 자산의 언어화·시각화가 핵심 과제.</div>
+    </div>
+  </div>
+
+
+  <!-- ═══ SECTION 7: 마케팅 현황 진단 ═══ -->
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <h2 class="section-title">마케팅 현황 진단</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="card-grid card-grid-3" style="margin-bottom:20px;">
+    <div class="card">
+      <p class="card-label">기존 대행사 경험</p>
+      <p class="card-value">이용 이력 있음 · 월 200만원<br><span style="color:var(--red);font-size:13px;">결과 불만족</span></p>
+    </div>
+    <div class="card">
+      <p class="card-label">마케팅 자가 이해도</p>
+      <p class="card-value" style="font-size:22px;font-weight:700;color:var(--green-deep);">3 <span style="font-size:14px;color:var(--ink-light);font-weight:400;">/ 5</span></p>
+    </div>
+    <div class="card">
+      <p class="card-label">관심 온라인 채널</p>
+      <div class="tags" style="margin-top:4px;">
+        <span class="tag tag-green">네이버 플레이스</span>
+        <span class="tag tag-green">네이버 카페</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-red">
+    <div class="callout-dot"></div>
+    <div class="callout-text">기존 대행사에 "직접적 도움을 못 느꼈다" — 단순 콘텐츠 제작 위주의 대행이었을 가능성 높음. 현황 진단 → 전략 수립 → 실행 피드백 루프를 함께 잡아주는 파트너를 원함.</div>
+  </div>
+
+  <div class="callout callout-amber">
+    <div class="callout-dot"></div>
+    <div class="callout-text">네이버 광고 이해도 부족 · 마케팅 방법론 전반 숙지 미비 → 교육과 전략 설명을 병행하는 방식의 소통 필요.</div>
+  </div>
+
+  <div class="card-grid card-grid-2" style="margin-top:12px;">
+    <div class="card">
+      <p class="card-label">관심 오프라인 채널</p>
+      <div class="tags" style="margin-top:4px;">
+        <span class="tag tag-gray">병원 내부 브랜딩</span>
+        <span class="tag tag-gray">간판 / 배너</span>
+        <span class="tag tag-gray">업체 MOU 제휴</span>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card-label">THINKLAB 기대사항</p>
+      <p class="card-value" style="font-size:13px;">"치과의 현황 파악과 문제 인식·개선 방안 마련에 적극적으로 도움을 줄 수 있으면 좋겠다"</p>
+    </div>
+  </div>
+
+
+  <!-- ═══ SECTION 8: 우선 과제 ═══ -->
+  <div class="section-header">
+    <span class="section-num">08</span>
+    <h2 class="section-title">우선 실행 과제</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="priority-row">
+    <div class="priority-num">01</div>
+    <div class="priority-content">
+      <p class="priority-title">4분기 이내 지역 내 방문자 리뷰 1위 달성</p>
+      <p class="priority-desc">목표: 현재 996건 → 연세일등치과(1,637건) 추월. 자연리뷰 설계를 통해 실제 내원 환자가 자발적으로 작성하는 리뷰로만 구성. 네이버 플레이스 리뷰와 구글 리뷰를 병행 설계하여 플랫폼 간 신뢰도를 동시에 확보. 작업 리뷰 없이 순수 환자 경험 기반으로 지역 1위를 달성하는 것이 장기 자산.</p>
+      <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
+        <span class="tag tag-green">네이버 플레이스 자연리뷰</span>
+        <span class="tag tag-green">구글 리뷰 병행</span>
+        <span class="tag tag-green">4분기 목표</span>
+        <span class="tag tag-amber">지역 내 방문자 리뷰 1위</span>
+      </div>
+    </div>
+  </div>
+  <div class="priority-row">
+    <div class="priority-num">02</div>
+    <div class="priority-content">
+      <p class="priority-title">플레이스 배너 이미지 통합 정비</p>
+      <p class="priority-desc">현재 배너 메시지·이미지 퀄리티 편차 해소. 브랜드 페르소나(성실하고 소탈한 전문가)에 맞춘 톤으로 통일. 전문의 3인 · 사과나무 네트워크 자산 전면 활용.</p>
+    </div>
+  </div>
+  <div class="priority-row">
+    <div class="priority-num">03</div>
+    <div class="priority-content">
+      <p class="priority-title">PEI 기반 실제 환자 경험 데이터 축적 및 분석</p>
+      <p class="priority-desc">Patient Experience Index(PEI)를 도입하여 내원 환자의 실제 경험을 정량적으로 측정·기록. 진료 과정 전반(예약 → 대기 → 진료 → 사후 관리)의 환자 만족도를 구조화된 데이터로 축적. 단순 만족도 조사를 넘어 개선 우선순위를 도출하고, 리뷰 품질 향상과 재방문율 제고의 실질적 근거로 활용.</p>
+      <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
+        <span class="tag tag-green">환자 경험 정량화</span>
+        <span class="tag tag-green">데이터 기반 개선</span>
+        <span class="tag tag-gray">진료 전 과정 측정</span>
+      </div>
+    </div>
+  </div>
+  <div class="priority-row">
+    <div class="priority-num">04</div>
+    <div class="priority-content">
+      <p class="priority-title">컴플레인 매뉴얼 수립</p>
+      <p class="priority-desc">현재 기록만 있고 공식 매뉴얼 없음. 팀별 자체 대응에서 병원 차원의 표준화된 대응 프로세스로 업그레이드. 리뷰 품질 유지를 위한 기반 작업.</p>
+    </div>
+  </div>
+  <div class="priority-row">
+    <div class="priority-num">05</div>
+    <div class="priority-content">
+      <p class="priority-title">인사 평가 제도 도입 지원</p>
+      <p class="priority-desc">현재 '계획 중' 단계. 호봉제 + 인센티브 구조 내에서 성과 평가 기준 설정. 조직 안정성이 서비스 품질과 직결되므로 마케팅 기반 과제.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <p style="font-size:12px;color:var(--ink-light);text-align:center;padding-bottom:20px;">본 보고서는 THINKLAB이 설문 데이터 및 현장 분석을 바탕으로 작성하였습니다. · 2026년 4월</p>
+
+</div>
+</body>
+</html>
